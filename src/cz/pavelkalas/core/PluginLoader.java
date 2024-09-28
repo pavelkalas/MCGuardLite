@@ -2,6 +2,7 @@ package cz.pavelkalas.core;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import cz.pavelkalas.listeners.ConnectionListener;
 import cz.pavelkalas.utils.ConfigurationManager;
 
 public class PluginLoader extends JavaPlugin {
@@ -15,6 +16,8 @@ public class PluginLoader extends JavaPlugin {
 	public void onEnable() {
 		configManager = new ConfigurationManager("mcguard.ini");
 		configManager.loadConfig();
+		
+		getServer().getPluginManager().registerEvents(new ConnectionListener(configManager), this);
 	}
 
 	/**

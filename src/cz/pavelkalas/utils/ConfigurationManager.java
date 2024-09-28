@@ -78,8 +78,8 @@ public class ConfigurationManager {
 	/**
 	 * Returns a value by provided key in config.
 	 * 
-	 * @param name Key in configuration.
-	 * @return Returns a value from key in config.
+	 * @param name  Key in configuration.
+	 * @return      Returns a value from key in config.
 	 */
 	public String getConfig(String name) {
 		if (isLoaded()) {
@@ -87,6 +87,43 @@ public class ConfigurationManager {
 				if (conf.name.equals(name)) {
 					return conf.value;
 				}
+			}
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Get configuration arguments.
+	 * 
+	 * @param name  Key in configuration.
+	 * @return      Returns an array of arguments.
+	 */
+	public String[] getConfigArguments(String name) {
+		String value = getConfig(name);
+		
+		if (value.contains(" ")) {
+			return value.split(" ");
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Get configuration argument at specified index.
+	 * 
+	 * @param name           Key in configuration.
+	 * @param argumentIndex  Argument index in array.
+	 * @return				 Returns a argument from an array of arguments.
+	 */
+	public String getConfigArgumentAt(String name, int argumentIndex) {
+		String value = getConfig(name);
+		
+		if (value.contains(" ")) {
+			String[] args = value.split(" ");
+			
+			if (args.length > argumentIndex && argumentIndex >= 0) {
+				return args[argumentIndex];
 			}
 		}
 		
