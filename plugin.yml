@@ -1,0 +1,3 @@
+name: MCGuardLite
+version: 1.0
+main: cz.pavelkalas.core.PluginLoader
