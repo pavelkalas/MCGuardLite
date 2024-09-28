@@ -7,6 +7,9 @@ import cz.pavelkalas.utils.ConfigurationManager;
 
 public class PluginLoader extends JavaPlugin {
 
+	/**
+	 * ConfigurationManager instance.
+	 */
 	private ConfigurationManager configManager;
 	
 	/**
@@ -17,7 +20,9 @@ public class PluginLoader extends JavaPlugin {
 		configManager = new ConfigurationManager("mcguard.ini");
 		configManager.loadConfig();
 		
-		getServer().getPluginManager().registerEvents(new ConnectionListener(configManager), this);
+		if (configManager.isLoaded()) {
+			getServer().getPluginManager().registerEvents(new ConnectionListener(configManager), this);
+		}
 	}
 
 	/**
