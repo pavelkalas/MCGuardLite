@@ -16,15 +16,31 @@ public class Attempt {
 		this.playerName = playerName;
 	}
 	
+	/**
+	 * Constructor with initial attempts value.
+	 * 
+	 * @param playerName    Player name
+	 * @param attempted     Initial attempts value
+	 */
 	public Attempt(String playerName, int attempted) {
 		this.playerName = playerName;
 		this.attempted = attempted;
 	}
 	
+	/**
+	 * Returns a player name.
+	 * 
+	 * @return Player name
+	 */
 	public String getPlayer() {
 		return this.playerName;
 	}
 	
+	/**
+	 * Returns a count of attempts.
+	 * 
+	 * @return Attempts count
+	 */
 	public int getAttemptsCount() {
 		return this.attempted;
 	}

@@ -7,11 +7,17 @@ import cz.pavelkalas.structures.Attempt;
 
 public class AttemptManager {
 
+	/**
+	 * List of players attempts.
+	 */
 	private List<Attempt> playerList = new ArrayList<Attempt>();
 	
-	public AttemptManager() {
-	}
-
+	/**
+	 * Finds an entry in list.
+	 * 
+	 * @param player   Player name
+	 * @return         Returns Attempt instance
+	 */
 	public Attempt findEntry(String player) {
 		for (Attempt attempt : playerList) {
 			if (attempt.getPlayer().equals(player)) {
@@ -22,14 +28,20 @@ public class AttemptManager {
 		return null;
 	}
 	
+	/**
+	 * Adds attempt to list.
+	 * 
+	 * @param player    Player name
+	 */
 	public void addAttempt(String player) {
 		playerList.add(new Attempt(player));
 	}
 	
-	public void resetAttempt(Attempt attempt) {
-		playerList.remove(attempt);
-	}
-	
+	/**
+	 * Incements attempts count += 1
+	 * 
+	 * @param player    Player name
+	 */
 	public void incrementAttempt(String player) {
 		Attempt attempt = findEntry(player);
 
@@ -37,6 +49,11 @@ public class AttemptManager {
 		playerList.add(new Attempt(player, attempt.getAttemptsCount() + 1));
 	}
 	
+	/**
+	 * Reset attempts to 0
+	 * 
+	 * @param playerName    Player name
+	 */
 	public void resetAttempt(String playerName) {
 		Attempt attempt = findEntry(playerName);
 		

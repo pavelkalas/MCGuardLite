@@ -57,6 +57,11 @@ public class PlayerListener implements Listener {
 		}
 	}
 
+	/**
+	 * Runs everytime ANY player move.
+	 * 
+	 * @param event Player movement event
+	 */
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onPlayerMove(PlayerMoveEvent event) {
