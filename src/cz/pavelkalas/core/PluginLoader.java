@@ -3,6 +3,7 @@ package cz.pavelkalas.core;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import cz.pavelkalas.listeners.ConnectionListener;
+import cz.pavelkalas.listeners.PlayerListener;
 import cz.pavelkalas.utils.ConfigurationManager;
 
 public class PluginLoader extends JavaPlugin {
@@ -22,6 +23,7 @@ public class PluginLoader extends JavaPlugin {
 		
 		if (configManager.isLoaded()) {
 			getServer().getPluginManager().registerEvents(new ConnectionListener(configManager), this);
+			getServer().getPluginManager().registerEvents(new PlayerListener(configManager), this);
 		}
 	}
 
