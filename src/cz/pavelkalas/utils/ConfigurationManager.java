@@ -39,6 +39,10 @@ public class ConfigurationManager {
 			if (!configFile.exists()) {
 				configFile.createNewFile();
 			}
+			
+			if (configList.size() > 0) {
+				configList.clear();
+			}
 
 			try (FileReader fileReader = new FileReader(configFile); Scanner scanner = new Scanner(fileReader)) {
 
