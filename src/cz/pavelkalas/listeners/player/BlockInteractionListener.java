@@ -20,6 +20,11 @@ public class BlockInteractionListener implements Listener {
 		isEnabled = configManager.getConfig("nooperatorblockinteraction").contains("1");
 	}
 
+	/**
+	 * On block break.
+	 * 
+	 * @param event    Block break event
+	 */
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
 		Player player = event.getPlayer();
@@ -30,6 +35,11 @@ public class BlockInteractionListener implements Listener {
 		}
 	}
 
+	/**
+	 * On block placement.
+	 * 
+	 * @param event    Block placement event
+	 */
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event) {
 		Player player = event.getPlayer();
