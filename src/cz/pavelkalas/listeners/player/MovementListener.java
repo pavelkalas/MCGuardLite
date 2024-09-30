@@ -93,7 +93,7 @@ public class MovementListener implements Listener {
 					attemptManager.incrementAttempt(playerName);
 					player.kickPlayer(Strings.MSG_DONT_USE_CHEATS);
 					return;
-				} else if (attemptManager.findEntry(playerName).getAttemptsCount() > MAX_ATTEMPTS) {
+				} else if (attemptManager.findEntry(playerName).getAttemptsCount() >= MAX_ATTEMPTS) {
 					attemptManager.resetAttempt(playerName);
 					PlayerUtils.banPlayer(player, Strings.MSG_YOURE_BANNED);
 					return;
