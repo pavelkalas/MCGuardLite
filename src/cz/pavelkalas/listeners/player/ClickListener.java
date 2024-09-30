@@ -60,6 +60,11 @@ public class ClickListener implements Listener {
 		}
 	}
 
+	/**
+	 * On player clicking.
+	 * 
+	 * @param event   Player interacting event instance
+	 */
 	@EventHandler
 	public void onPlayerClick(PlayerInteractEvent event) {
 		if (isEnabled) {
@@ -68,6 +73,11 @@ public class ClickListener implements Listener {
 		}
 	}
 
+	/**
+	 * Handling player clicking.
+	 * 
+	 * @param player   Player instance
+	 */
 	public void onClick(Player player) {
 		String playerName = player.getName();
 		long currentTime = System.currentTimeMillis();
@@ -92,7 +102,7 @@ public class ClickListener implements Listener {
 		if (attemptManager.findEntry(player.getName()) == null) {
 			attemptManager.addAttempt(player.getName());
 		}
-
+		
 		if (attemptManager.findEntry(player.getName()).getAttemptsCount() >= MAX_ATTEMPTS) {
 			PlayerUtils.banPlayer(player, Strings.MSG_YOURE_BANNED);
 			attemptManager.resetAttempt(player.getName());

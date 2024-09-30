@@ -1,3 +1,10 @@
-joinmsg = welcome on our server.
-noviolatemoving = 1 2 3.25 6.5 11.0
-nooperatorblockinteraction = 1
+
+// GENERIC
+joinmsg = vitej na tomto serveru; toto je zatim pouha zkouska.
+
+
+// ANTICHEAT
+
+noviolatemoving = 0 2 3.25 6.5 11.0   // X [enable/disable] Y [tries left] Z [max walking speed] Q [max sprinting speed] R [max flying speed (ignoring sprinting)]
+nooperatorblockinteraction = 1        // X [enable/disable] Disable placing/breaking blocks without OP if enabled.
+nospeedclick = 1 1000 15 2            // X [enable/disable] Y [max time to exceed] Z [maximum click per specified time] Q [tries left]
