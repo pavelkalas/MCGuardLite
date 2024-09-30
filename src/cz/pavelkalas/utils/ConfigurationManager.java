@@ -57,6 +57,10 @@ public class ConfigurationManager {
 
 					String name = parts[0].trim();
 					String value = parts[1].trim();
+					
+					if (value.contains("//")) {
+						value = value.split("//")[0].trim();
+					}
 
 					if (!name.isEmpty()) {
 						configList.add(new Config(name, value));
