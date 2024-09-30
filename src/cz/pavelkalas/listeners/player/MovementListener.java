@@ -1,4 +1,4 @@
-package cz.pavelkalas.listeners;
+package cz.pavelkalas.listeners.player;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -11,7 +11,7 @@ import cz.pavelkalas.utils.AttemptManager;
 import cz.pavelkalas.utils.ConfigurationManager;
 import cz.pavelkalas.utils.PlayerUtils;
 
-public class PlayerListener implements Listener {
+public class MovementListener implements Listener {
 
 	/**
 	 * Maximum walking speed per move.
@@ -32,7 +32,7 @@ public class PlayerListener implements Listener {
 	 * Maximum ignoring attempts before punishment.
 	 */
 	private int MAX_ATTEMPTS = 1;
-	
+
 	/**
 	 * AttemptManager instance.
 	 */
@@ -43,12 +43,12 @@ public class PlayerListener implements Listener {
 	 */
 	private boolean isEnabled = false;
 
-	public PlayerListener(ConfigurationManager configManager) {
+	public MovementListener(ConfigurationManager configManager) {
 		this.attemptManager = new AttemptManager();
 
 		String[] arguments = configManager.getConfigArguments("noviolatemoving");
-		
-		if (arguments != null && arguments.length >= 5) {
+
+		if (arguments != null) {
 			isEnabled = arguments[0].equals("1");
 			MAX_ATTEMPTS = Integer.parseInt(arguments[1]);
 			MAX_WALKING_SPEED = Double.parseDouble(arguments[2]);

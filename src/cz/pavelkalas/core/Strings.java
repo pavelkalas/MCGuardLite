@@ -15,5 +15,5 @@ public class Strings {
 	//
 	public static final String MSG_YOURE_BANNED = PREFIX + (ChatColor.RED + "" + ChatColor.BOLD) + "You are permanently banned for cheating! If you belive this is mistake, contact us!";
 	public static final String MSG_DONT_USE_CHEATS = PREFIX + (ChatColor.RED + "" + ChatColor.BOLD) + "You really shouldn't use cheats if you don't want be punished!";
-
+	public static final String MSG_YOU_CANNOT_DO_THAT = PREFIX + (ChatColor.RED + "" + ChatColor.BOLD) + "You are not permitted to do this action!";
 }
