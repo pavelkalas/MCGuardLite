@@ -46,7 +46,7 @@ public class ConnectionListener implements Listener {
 		
 		if (joinmsg != null && joinmsg.length <= MAX_MESSAGES_COUNT) {
 			for (String msg : joinmsg) {
-				if (msg.length() <= MAX_SINGLE_MESSAGE_LENGTH) {
+				if (msg.length() <= MAX_SINGLE_MESSAGE_LENGTH && msg.trim().length() > 0) {
 					player.sendMessage("[Server] " + msg.trim());
 				}
 			}
