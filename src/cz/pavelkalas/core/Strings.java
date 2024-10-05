@@ -10,6 +10,10 @@ public class Strings {
 	public static final String PREFIX_DELIM = ChatColor.WHITE + " >> ";
 	public static final String PREFIX = ChatColor.GOLD + "MCGuard" + ChatColor.YELLOW + "Lite" + PREFIX_DELIM;
 	
+	public static final String VERSION = "1.0";
+	
+	public static final String JOINMSG_INFO = (ChatColor.GRAY + "" + ChatColor.BOLD) + "> McGuardLite v" + VERSION + " active - https://pavelkalas.xyz";
+	
 	//
 	// ingame strings
 	//

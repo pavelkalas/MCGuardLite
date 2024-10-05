@@ -5,6 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import cz.pavelkalas.core.Strings;
 import cz.pavelkalas.utils.ConfigurationManager;
 
 public class ConnectionListener implements Listener {
@@ -39,12 +40,18 @@ public class ConnectionListener implements Listener {
 		Player player = event.getPlayer();
 		String[] joinmsg = configManager.getConfig("joinmsg").split(";");
 		
+		player.sendMessage("");
+		player.sendMessage(Strings.JOINMSG_INFO);
+		player.sendMessage("");
+		
 		if (joinmsg != null && joinmsg.length <= MAX_MESSAGES_COUNT) {
 			for (String msg : joinmsg) {
 				if (msg.length() <= MAX_SINGLE_MESSAGE_LENGTH) {
 					player.sendMessage("[Server] " + msg.trim());
 				}
 			}
+			
+			player.sendMessage("");
 		}
 	}
 }
